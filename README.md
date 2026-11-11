@@ -68,13 +68,24 @@ node --check app.js && node --check exam-data.js
 
 ## 部署到 GitHub Pages（xehuosh 账号）
 
-> 建议仓库名用 **`slai-RL-midterm-exam`**（不要带 `.github.io` 后缀）。
-> 只有仓库名恰好等于 `<用户名>.github.io` 才是用户主页站点；带后缀的仓库仍然是项目站点，网址会变成
-> `https://xehuosh.github.io/slai-RL-midterm-exam.github.io/`，又长又容易写错。
+> 建议仓库名用 **`slai-RL-mock-exam`** —— `mock-exam` 直接点明这是**模拟考试**，
+> 与刷题站 `slai-RL-midterm-practice.github.io` 组成「刷题 / 模考」两个姊妹项目。
+> 不要带 `.github.io` 后缀：只有仓库名恰好等于 `<用户名>.github.io` 才是用户主页站点，带后缀仍然是项目站点，
+> 网址会变成 `https://xehuosh.github.io/slai-RL-mock-exam.github.io/`，又长又容易写错。
+> GitHub 可能把 Pages 路径规范化为全小写；若网址打不开，以 Pages 设置页显示的链接为准。
 
 **第 1 步：在 GitHub 网页新建仓库**
 
-打开 <https://github.com/new>，Repository name 填 `slai-RL-midterm-exam`，选 **Public**，**不要**勾选 "Add a README file" / .gitignore / license，然后 Create repository。
+打开 <https://github.com/new>，Repository name 填 `slai-RL-mock-exam`，选 **Public**，**不要**勾选 "Add a README file" / .gitignore / license，然后 Create repository。（想用别的名字也行，把下面所有命令和网址里的 `slai-RL-mock-exam` 一起替换即可。）
+
+如果之前已经按上一版建议的旧名 `slai-RL-midterm-exam` 建好了仓库，两种方式任选其一：
+
+- 在仓库 **Settings → General → Repository name** 改名为 `slai-RL-mock-exam`，然后照下面继续；
+- 或保留旧名，把下面命令与网址中的 `slai-RL-mock-exam` 全部换成 `slai-RL-midterm-exam`。
+
+若本地已经执行过 `git remote add origin`，改名后用
+`git remote set-url origin https://github.com/xehuosh/slai-RL-mock-exam.git` 更新远程地址
+（可用 `git remote -v` 核对）。
 
 **第 2 步：推送源码（Git Bash / PowerShell 均可）**
 
@@ -82,7 +93,7 @@ node --check app.js && node --check exam-data.js
 
 ```bash
 cd "C:/Users/sunzp/WorkBuddy/2026-11-06-11-52-18/rl-exam-site"
-git remote add origin https://github.com/xehuosh/slai-RL-midterm-exam.git
+git remote add origin https://github.com/xehuosh/slai-RL-mock-exam.git
 git branch -M main
 git push -u origin main
 ```
@@ -93,9 +104,9 @@ git push -u origin main
 cd <解压后的文件夹>
 git init
 git add -A
-git commit -m "Add RL midterm practice exam site"
+git commit -m "Add RL midterm mock exam site"
 git branch -M main
-git remote add origin https://github.com/xehuosh/slai-RL-midterm-exam.git
+git remote add origin https://github.com/xehuosh/slai-RL-mock-exam.git
 git push -u origin main
 ```
 
@@ -109,7 +120,7 @@ git push -u origin main
 仓库 → **Settings → Pages → Build and deployment** → Source 选 **Deploy from a branch** → Branch 选 `main` + `/(root)` → Save。等 1–2 分钟，访问：
 
 ```
-https://xehuosh.github.io/slai-RL-midterm-exam/
+https://xehuosh.github.io/slai-RL-mock-exam/
 ```
 
 > 已有的刷题站仓库 `xehuosh/slai-RL-midterm-practice.github.io` 是另一个项目；开启 Pages 后它的网址是
